@@ -22,16 +22,15 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        [Route("TestNum")]
-        //GET: /api/Users/TestNum
-        public IActionResult GetTestNum()
+        [Route("UserCount")]
+        //GET: /api/Users/UserCount
+        public IActionResult GetUserCount()
         {
-            var result = _userService.Test();
+            int result = _userService.NumOfUsers();
 
             return Ok(result);
         }
-
-        
+ 
         [HttpPost]
         [Route("Register")]
         //POST: /api/Users/Register

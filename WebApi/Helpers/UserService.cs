@@ -16,9 +16,9 @@ namespace WebApi.Helpers
             _context = context;
         }
 
-        public int Test()
+        public int NumOfUsers()
         {
-            return 3;
+            return _context.Users.Count();
         }
 
         public bool CreateUser(User user, string password)
