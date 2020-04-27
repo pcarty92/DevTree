@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Entities;
 using WebApi.Helpers;
+using WebApi.Models.Users;
 
 namespace WebApi.Controllers
 {
@@ -28,5 +30,25 @@ namespace WebApi.Controllers
 
             return Ok(result);
         }
+
+        
+        [HttpPost]
+        [Route("Register")]
+        //POST: /api/Users/Register
+        public IActionResult Register(RegisterModel model)
+        {
+            User user = new User
+            {
+                Name = model.Name,
+                Username = model.Username
+            };
+
+            if (_userService.CreateUser(user, model.Password))
+                return Ok();
+            else
+                return BadRequest("Username already exists");
+
+        }
+        
     }
 }

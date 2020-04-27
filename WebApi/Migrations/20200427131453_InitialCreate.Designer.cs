@@ -10,7 +10,7 @@ using WebApi.Data;
 namespace WebApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200426182627_InitialCreate")]
+    [Migration("20200427131453_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,10 +28,7 @@ namespace WebApi.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("PasswordHash")

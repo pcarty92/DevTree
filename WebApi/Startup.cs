@@ -29,6 +29,7 @@ namespace WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevTreeDatabase")));
+            services.AddCors();
             services.AddControllers();
 
             var key = Encoding.UTF8.GetBytes(Configuration["ApplicationSettings:Secret"].ToString());
@@ -45,6 +46,11 @@ namespace WebApi
             }
 
             app.UseRouting();
+
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
 
             app.UseAuthorization();
 
