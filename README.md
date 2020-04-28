@@ -1,2 +1,2 @@
 # DevTree
-A gumtree like website for developers to buy/sell work.
+A website with the idea of being like gumtree, except for developers to buy and sell small tasks.

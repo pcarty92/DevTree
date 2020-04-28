@@ -18,9 +18,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private authService: AuthService
   ) {
-    //testing to see if user is already logged in
     if (this.authService.currentUserValue) {
-      alert(this.authService.currentUserValue.username + ' is already logged in');
+      this.router.navigate(['/dashboard']);
     }
    }
 
@@ -44,21 +43,12 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          //test if login was a success
-          alert('Log in successful');
-          this.router.navigate(['/home']);
+          alert('Hello ' + this.authService.currentUserValue.name);
+          this.router.navigate(['/dashboard']);
         },
         error => {
           alert('There was a database error with login');
         }
-      )
-  }
-
-  testCurrentUser() {
-    if (this.authService.currentUserValue) {
-      alert('Current user is: ' + this.authService.currentUserValue.username);
-    } else {
-      alert('No users currently logged in');
-    }
+      );
   }
 }

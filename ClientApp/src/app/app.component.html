@@ -1,14 +1,17 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <a class="navbar-brand" routerLink="/">DevTree</a>
   <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/register">Register</a>
+    <li class="nav-item" >
+      <a class="nav-link" routerLink="/register" *ngIf="currentUser==null">Register</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/login">Log In</a>
+      <a class="nav-link" routerLink="/login" *ngIf="currentUser==null">Log In</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Link 3</a>
+      <a class="nav-link" routerLink="/dashboard" *ngIf="currentUser">Dashboard</a>
+    </li>
+    <li class="nav-item" *ngIf="currentUser">
+      <a class="nav-link" (click)="logout()">Log Out</a>
     </li>
   </ul>
 </nav>
