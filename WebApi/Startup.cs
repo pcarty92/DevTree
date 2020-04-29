@@ -71,6 +71,7 @@ namespace WebApi
             });           
 
             services.AddScoped<UserService>();
+            services.AddScoped<JobService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
