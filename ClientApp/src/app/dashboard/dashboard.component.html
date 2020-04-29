@@ -1,3 +1,19 @@
 <h2>Dashboard</h2>
 <br/>
 <h4>User: {{currentUser.name}}</h4>
+<br/>
+
+<button (click)="onPostJob()">Post Job</button>
+<button (click)="onShowUserJobs()">Show my jobs</button>
+<button (click)="onShowAllJobs()">Show all jobs</button>
+<br/><br/>
+
+<div *ngIf="displayPostJob">
+    <app-postjob></app-postjob>
+</div>
+<div *ngIf="displayShowUserJobs">
+    <app-userjobs></app-userjobs>
+</div>
+<div *ngIf="displayShowNonUserJobs">
+    <app-alljobs></app-alljobs>
+</div>

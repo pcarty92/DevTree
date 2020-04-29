@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { first } from 'rxjs/operators';
 
 import { User } from '../_models/user';
-import { UserService } from '../_services/user.service';
 import { AuthService } from '../_services/auth.service';
 
 @Component({
@@ -12,6 +10,9 @@ import { AuthService } from '../_services/auth.service';
 })
 export class DashboardComponent implements OnInit {
   currentUser: User;
+  displayPostJob = false;
+  displayShowUserJobs = false;
+  displayShowNonUserJobs = false;
 
   constructor(
     private authService: AuthService
@@ -20,6 +21,24 @@ export class DashboardComponent implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+  onPostJob() {
+    this.displayPostJob = !this.displayPostJob;
+    this.displayShowUserJobs = false;
+    this.displayShowNonUserJobs = false;
+  }
+
+  onShowUserJobs() {
+    this.displayShowUserJobs = !this.displayShowUserJobs;
+    this.displayPostJob = false;
+    this.displayShowNonUserJobs = false;
+  }
+
+  onShowAllJobs() {
+    this.displayShowNonUserJobs = !this.displayShowNonUserJobs;
+    this.displayPostJob = false;
+    this.displayShowUserJobs = false;
   }
 
 }

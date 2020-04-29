@@ -1,0 +1,21 @@
+<h2>Post Job</h2>
+
+<form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="jobname">Job Name</label>
+    <input type="text" formControlName="jobname" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="jobdescription">Job Description</label>
+    <input type="text" formControlName="jobdescription" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input type="number" formControlName="price" class="form-control" />
+  </div>
+  <div class="form-group">
+    <button>
+      Post Job
+    </button>
+  </div>
+</form>
