@@ -9,7 +9,7 @@ import { User } from '../_models/user';
   providedIn: 'root'
 })
 export class AuthService {
-  readonly BaseURI = 'http://localhost:56027/api';
+  readonly BaseURI = 'http://localhost:5000/api';
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 

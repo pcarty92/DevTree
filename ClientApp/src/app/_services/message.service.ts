@@ -7,7 +7,7 @@ import { Message } from '../_models/Message';
   providedIn: 'root'
 })
 export class MessageService {
-  readonly BaseURI = 'http://localhost:56027/api';
+  readonly BaseURI = 'http://localhost:5000/api';
 
   constructor(
     private http: HttpClient
