@@ -27,7 +27,7 @@ Follow these steps to get your development environment set up:
       ```
      dotnet run
      ```
-  5. After the backend has started, navigate to the `\ClientApp` directory, and restore the required packages by running:
+  5. After the backend has started, open another command window and navigate to the `\ClientApp` directory, and restore the required packages by running:
      ```
 	 npm install
 	 ```
@@ -38,9 +38,9 @@ Follow these steps to get your development environment set up:
      ```
 
 
-  7. Launch [https://localhost:5000/](http://localhost:5000/api) in your browser to view the API
+  7. Launch [http://localhost:5000/](http://localhost:5000/api) in your browser to view the API
   
-  8. Launch [https://localhost:4200/](http://localhost:4200/) in your browser to view the UI
+  8. Launch [http://localhost:4200/](http://localhost:4200/) in your browser to view the UI
 
 ## Technologies
 * .NET Core 3
