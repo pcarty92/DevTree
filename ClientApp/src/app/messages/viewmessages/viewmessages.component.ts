@@ -32,6 +32,20 @@ export class ViewmessagesComponent implements OnInit {
     this.router.navigate(['/sendmessage', senderId]);
   }
 
+  deleteMessage(id) {
+    this.messageService.deleteMessage(id)
+      .pipe(first())
+      .subscribe(
+        data => {
+          alert('Message deleted');
+          window.location.reload();
+        },
+        error => {
+          alert('Message could not be deleted');
+        }
+      );
+  }
+
   goBack() {
     this.router.navigate(['/dashboard']);
   }

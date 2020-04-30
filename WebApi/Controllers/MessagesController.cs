@@ -49,5 +49,17 @@ namespace WebApi.Controllers
             else
                 return BadRequest("Message cannot be empty");
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var claimsIdentity = this.User.Identity as ClaimsIdentity;
+            var userId = claimsIdentity.FindFirst(ClaimTypes.Name)?.Value;
+
+            if (_messageService.Delete(id, userId))
+                return Ok();
+            else
+                return Unauthorized("Cannot delete message");
+        }
     }
 }

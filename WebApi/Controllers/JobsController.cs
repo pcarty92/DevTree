@@ -63,5 +63,17 @@ namespace WebApi.Controllers
             return Ok(jobs);
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var claimsIdentity = this.User.Identity as ClaimsIdentity;
+            var userId = claimsIdentity.FindFirst(ClaimTypes.Name)?.Value;
+
+            if (_jobService.Delete(id, userId))
+                return Ok();
+            else
+                return Unauthorized("Cannot delete job");
+        }
+
     }
 }

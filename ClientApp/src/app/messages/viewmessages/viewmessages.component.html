@@ -15,6 +15,7 @@
       <td>{{message.usernameSender}}</td>
       <td>{{message.content}}</td>
       <td><button class="btn btn-dark" (click)="sendMessage(message.userIdSender)">Reply</button></td>
+      <td><button class="btn btn-danger" (click)="deleteMessage(message.id)">Delete</button></td>
     </tr>
   </tbody>
 </table>

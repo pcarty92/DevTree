@@ -13,6 +13,7 @@
       <td>{{job.jobName}}</td>
       <td>{{job.jobDescription}}</td>
       <td>${{job.price}}</td>
+      <td><button class="btn btn-danger" (click)="deleteJob(job.id)">Delete</button></td>
     </tr>
   </tbody>
 </table>

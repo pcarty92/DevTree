@@ -55,5 +55,25 @@ namespace WebApi.Helpers
 
             return jobs;
         }
+
+        public bool Delete(int id, string userId)
+        {
+            var job = _context.Jobs.Find(id);
+
+            if (job.UserId != int.Parse(userId))
+                return false;
+
+            if (job == null)
+            {
+                return false;
+            }
+            else
+            {
+                _context.Jobs.Remove(job);
+                _context.SaveChanges();
+
+                return true;
+            }
+        }
     }
 }

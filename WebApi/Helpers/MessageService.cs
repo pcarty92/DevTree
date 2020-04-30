@@ -43,5 +43,25 @@ namespace WebApi.Helpers
 
             return true;
         }
+
+        public bool Delete(int id, string userId)
+        {
+            var message = _context.Messages.Find(id);
+
+            if (message.UserIdReceiver != int.Parse(userId))
+                return false;
+
+            if (message == null)
+            {
+                return false;
+            }
+            else
+            {
+                _context.Messages.Remove(message);
+                _context.SaveChanges();
+
+                return true;
+            }
+        }
     }
 }

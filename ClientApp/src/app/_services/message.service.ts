@@ -21,4 +21,8 @@ export class MessageService {
     return this.http.get<Message[]>(this.BaseURI + '/messages/getusermessages');
   }
 
+  deleteMessage(id) {
+    return this.http.delete(this.BaseURI + '/messages/' + id);
+  }
+
 }

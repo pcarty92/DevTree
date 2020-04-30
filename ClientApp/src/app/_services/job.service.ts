@@ -25,4 +25,8 @@ export class JobService {
     return this.http.get<Job[]>(this.BaseURI + '/jobs/getnonuserjobs');
   }
 
+  deleteJob(id) {
+    return this.http.delete(this.BaseURI + '/jobs/' + id);
+  }
+
 }
