@@ -5,6 +5,7 @@
     <strong>Name:</strong> {{job.jobName}},
     <strong>Description:</strong> {{job.jobDescription}},
     <strong>Price:</strong> {{job.price}},
-    <strong>User:</strong> {{job.username}}
+    <strong>User:</strong> {{job.username}} 
+    <button (click)="sendMessage(job.userId)">Send Message</button>
   </tr>
 </table>

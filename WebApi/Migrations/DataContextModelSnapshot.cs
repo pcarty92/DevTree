@@ -62,6 +62,9 @@ namespace WebApi.Migrations
                     b.Property<int>("UserIdSender")
                         .HasColumnType("int");
 
+                    b.Property<string>("UsernameSender")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Messages");

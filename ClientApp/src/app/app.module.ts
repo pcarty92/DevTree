@@ -15,6 +15,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PostjobComponent } from './jobs/postjob/postjob.component';
 import { UserjobsComponent } from './jobs/userjobs/userjobs.component';
 import { AlljobsComponent } from './jobs/alljobs/alljobs.component';
+import { SendmessageComponent } from './messages/sendmessage/sendmessage.component';
+import { ViewmessagesComponent } from './messages/viewmessages/viewmessages.component';
 
 @NgModule({
    declarations: [
@@ -25,7 +27,9 @@ import { AlljobsComponent } from './jobs/alljobs/alljobs.component';
       DashboardComponent,
       PostjobComponent,
       UserjobsComponent,
-      AlljobsComponent
+      AlljobsComponent,
+      SendmessageComponent,
+      ViewmessagesComponent
    ],
    imports: [
       BrowserModule,

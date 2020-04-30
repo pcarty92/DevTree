@@ -13,6 +13,7 @@ namespace WebApi.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Content = table.Column<string>(nullable: true),
+                    UsernameSender = table.Column<string>(nullable: true),
                     UserIdSender = table.Column<int>(nullable: false),
                     UserIdReceiver = table.Column<int>(nullable: false)
                 },

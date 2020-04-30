@@ -33,6 +33,7 @@ namespace WebApi.Helpers
             Message message = new Message
             {
                 Content = model.Content,
+                UsernameSender = _context.Users.Find(int.Parse(senderId)).Username,
                 UserIdSender = int.Parse(senderId),
                 UserIdReceiver = model.UserIdReceiver
             };

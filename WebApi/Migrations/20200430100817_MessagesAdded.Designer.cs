@@ -10,7 +10,7 @@ using WebApi.Data;
 namespace WebApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200429183005_MessagesAdded")]
+    [Migration("20200430100817_MessagesAdded")]
     partial class MessagesAdded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -63,6 +63,9 @@ namespace WebApi.Migrations
 
                     b.Property<int>("UserIdSender")
                         .HasColumnType("int");
+
+                    b.Property<string>("UsernameSender")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

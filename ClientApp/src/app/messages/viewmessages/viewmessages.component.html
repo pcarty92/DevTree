@@ -1,0 +1,11 @@
+<h3>Your messages</h3>
+<button (click)="goBack()">Back</button>
+<br/><br/>
+
+<table>
+  <tr *ngFor="let message of messages">
+    <strong>From:</strong> {{message.usernameSender}},
+    <strong>Message:</strong> {{message.content}}
+    <button (click)="sendMessage(message.userIdSender)">Reply</button>
+  </tr>
+</table>

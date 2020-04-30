@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { User } from '../_models/user';
 import { AuthService } from '../_services/auth.service';
@@ -15,6 +16,7 @@ export class DashboardComponent implements OnInit {
   displayShowNonUserJobs = false;
 
   constructor(
+    private router: Router,
     private authService: AuthService
   ) {
     this.currentUser = this.authService.currentUserValue;
@@ -39,6 +41,10 @@ export class DashboardComponent implements OnInit {
     this.displayShowNonUserJobs = !this.displayShowNonUserJobs;
     this.displayPostJob = false;
     this.displayShowUserJobs = false;
+  }
+
+  viewMessages() {
+    this.router.navigate(['/viewmessages']);
   }
 
 }
