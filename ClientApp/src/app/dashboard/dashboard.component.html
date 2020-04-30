@@ -3,10 +3,12 @@
 <h4>User: {{currentUser.name}}</h4>
 <br/>
 
-<button (click)="onPostJob()">Post Job</button>
-<button (click)="onShowUserJobs()">Show my jobs</button>
-<button (click)="onShowAllJobs()">Show all jobs</button>
-<button (click)="viewMessages()">View Messages</button>
+<div class="dashbuttons">
+    <button class="btn btn-outline-dark" (click)="onPostJob()">Post Job</button>
+    <button class="btn btn-outline-dark" (click)="onShowUserJobs()">Show my jobs</button>
+    <button class="btn btn-outline-dark" (click)="onShowAllJobs()">Show all jobs</button>
+    <button class="btn btn-outline-dark" (click)="viewMessages()">View Messages</button>
+</div>
 <br/><br/>
 
 <div *ngIf="displayPostJob">

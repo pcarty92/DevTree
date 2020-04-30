@@ -1,9 +1,18 @@
-<h3>Your current jobs</h3>
-
-<table>
-  <tr *ngFor="let job of jobs">
-    <strong>Name:</strong> {{job.jobName}},
-    <strong>Description:</strong> {{job.jobDescription}},
-    <strong>Price:</strong> {{job.price}}
-  </tr>
+<h2>Your current jobs</h2>
+<br/>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let job of jobs">
+      <td>{{job.jobName}}</td>
+      <td>{{job.jobDescription}}</td>
+      <td>${{job.price}}</td>
+    </tr>
+  </tbody>
 </table>

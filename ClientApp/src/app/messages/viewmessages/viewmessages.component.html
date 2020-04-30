@@ -1,11 +1,20 @@
-<h3>Your messages</h3>
-<button (click)="goBack()">Back</button>
+<button class="btn btn-outline-secondary" (click)="goBack()">Back</button>
 <br/><br/>
+<h2>Your Messages</h2>
+<br/>
 
-<table>
-  <tr *ngFor="let message of messages">
-    <strong>From:</strong> {{message.usernameSender}},
-    <strong>Message:</strong> {{message.content}}
-    <button (click)="sendMessage(message.userIdSender)">Reply</button>
-  </tr>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">From</th>
+      <th scope="col">Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let message of messages">
+      <td>{{message.usernameSender}}</td>
+      <td>{{message.content}}</td>
+      <td><button class="btn btn-dark" (click)="sendMessage(message.userIdSender)">Reply</button></td>
+    </tr>
+  </tbody>
 </table>

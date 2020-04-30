@@ -54,5 +54,7 @@ export class SendmessageComponent implements OnInit {
       );
   }
 
-  
+  goBack() {
+    this.router.navigate(['/dashboard']);
+  }
 }

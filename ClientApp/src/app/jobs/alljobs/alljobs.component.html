@@ -1,11 +1,21 @@
 <h3>All jobs</h3>
-
-<table>
-  <tr *ngFor="let job of jobs">
-    <strong>Name:</strong> {{job.jobName}},
-    <strong>Description:</strong> {{job.jobDescription}},
-    <strong>Price:</strong> {{job.price}},
-    <strong>User:</strong> {{job.username}} 
-    <button (click)="sendMessage(job.userId)">Send Message</button>
-  </tr>
+<br/>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+      <th scope="col">User</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let job of jobs">
+      <td>{{job.jobName}}</td>
+      <td>{{job.jobDescription}}</td>
+      <td>${{job.price}}</td>
+      <td>{{job.username}}</td>
+      <td><button class="btn btn-dark" (click)="sendMessage(job.userId)">Send Message</button></td>
+    </tr>
+  </tbody>
 </table>
