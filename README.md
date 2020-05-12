@@ -1,6 +1,8 @@
 # DevTree
 A website with the idea of being like gumtree, except for developers to buy and sell small tasks.
 
+![Dev Tree Demo](demo/devtreedemo.gif)
+
 ## Run the application
 Use these instructions to get the project up and running.
 
